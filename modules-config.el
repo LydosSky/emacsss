@@ -13,6 +13,7 @@
     company
     ui
     completion
+    diff-hl
    )
   "List of enabled modules.")
 
