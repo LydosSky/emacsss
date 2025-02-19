@@ -3,6 +3,7 @@
 
 ;;; Commentary:
 ;;; Code:
+;; Start the timer at the very beginning of init.el
 
 ;; Auto-revert in Emacs is a feature that automatically updates the
 ;; contents of a buffer to reflect changes made to the underlying file
@@ -27,6 +28,24 @@
 ;; upon reopening. This feature is particularly beneficial for resuming work at
 ;; the precise point where you previously left off.
 (add-hook 'after-init-hook #'save-place-mode)
+
+(add-to-list 'load-path (expand-file-name "modules" minimal-emacs-user-directory))
+(add-to-list 'load-path minimal-emacs-user-directory)
+
+(require 'modules-config)
+
+(defun load-modules (enabled-modules directory)
+  "Load all modules in ENABLED-MODULES list from DIRECTORY."
+  (when (file-directory-p directory)
+    (dolist (module-file (directory-files directory t "\\`module-.*\\.el\\'"))
+      (let* ((module-filename (file-name-sans-extension (file-name-nondirectory module-file)))  ; e.g., "module-company"
+             (module-name (intern (string-remove-prefix "module-" module-filename))))  ; e.g., 'company
+        (when (member module-name enabled-modules)
+          (message "Loading module: %s" module-filename)
+          (require (intern module-filename)))))))
+
+
+(load-modules list-modules (expand-file-name "modules" minimal-emacs-user-directory))
 
 (provide 'post-init)
 ;;; post-init.el ends here
