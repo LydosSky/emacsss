@@ -42,6 +42,9 @@
   :after company
   :config
   (company-statistics-mode))  ;; Enable company-statistics mode
+(setq-local completion-at-point-functions
+            (mapcar #'cape-company-to-capf
+                    (list #'company-files #'company-keywords #'company-dabbrev)))
 
 (provide 'module-company)
 ;;; module-company.el ends here

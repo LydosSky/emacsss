@@ -12,6 +12,7 @@
     magit
     company
     ui
+    completion
    )
   "List of enabled modules.")
 
