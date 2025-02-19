@@ -4,5 +4,6 @@
 ;;; Commentary:
 ;;; Code:
 
+(electric-pair-mode)
 (provide 'post-early-init)
 ;;; post-early-init.el ends here
