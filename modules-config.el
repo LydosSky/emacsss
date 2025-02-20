@@ -18,6 +18,7 @@
     tree-sitter                         ; tree-sitter better syntax
     flycheck                            ; check this out
     emmet                               ; tags everywhere
+    prisma                              ; prisma orm
     git-gutter
   "List of enabled modules.")
 
