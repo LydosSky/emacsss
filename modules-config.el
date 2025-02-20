@@ -7,13 +7,9 @@
 
 ;;; Code:
 
+;; This is the list of modules that will be load
 (defvar list-modules
   '(
-    magit
-    company
-    ui
-    completion
-   )
     magit                               ; magit 
     company                             ; company mode 
     ui                                  ; doom-themes modeline
@@ -26,7 +22,9 @@
     emmet                               ; tags everywhere
     pug                                 ; pug templates
     prisma                              ; prisma orm
+    javascript                          ; javascript
     git-gutter
+    )
   "List of enabled modules.")
 
 (provide 'modules-config)
