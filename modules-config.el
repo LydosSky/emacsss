@@ -16,6 +16,7 @@
     diff-hl
    )
     env                                 ; env for getting PATH
+    tree-sitter                         ; tree-sitter better syntax
     flycheck                            ; check this out
   "List of enabled modules.")
 
