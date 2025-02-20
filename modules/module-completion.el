@@ -94,9 +94,9 @@
   :defer t
   :commands (helpful-callable helpful-variable helpful-command helpful-key)
   :bind ([remap describe-function] . helpful-callable)
-        ([remap describe-variable] . helpful-variable)
-        ([remap describe-command]  . helpful-command)
-        ([remap describe-key]      . helpful-key))
+  ([remap describe-variable] . helpful-variable)
+  ([remap describe-command]  . helpful-command)
+  ([remap describe-key]      . helpful-key))
 
 ;;; Savehist: Persist History Over Sessions
 (use-package savehist

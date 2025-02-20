@@ -24,12 +24,6 @@
               ("C-n" . company-select-next)
               ("C-p" . company-select-previous)))
 
-(use-package company-box
-  :hook (company-mode . company-box-mode)
-  :config
-  (setq company-box-show-single-candidate t)  ;; Show single candidate in tooltip
-  (setq company-box-backends-colors nil))  ;; Use default colors for backends
-
 (use-package company-quickhelp
   :defer t
   :after company
