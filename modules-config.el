@@ -16,6 +16,7 @@
     diff-hl
    )
     env                                 ; env for getting PATH
+    flycheck                            ; check this out
   "List of enabled modules.")
 
 (provide 'modules-config)
