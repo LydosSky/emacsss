@@ -10,11 +10,11 @@
 ;; This is the list of modules that will be load
 (defvar list-modules
   '(
-    magit                               ; magit 
-    company                             ; company mode 
+    magit                               ; magit
+    company                             ; company mode
     ui                                  ; doom-themes modeline
-    completion                          ; completion vertico and all crew 
-    lsp                                 ; lsp mode and ui 
+    completion                          ; completion vertico and all crew
+    lsp                                 ; lsp mode and ui
     env                                 ; env for getting PATH
     tree-sitter                         ; tree-sitter better syntax
     flycheck                            ; check this out
@@ -23,7 +23,8 @@
     pug                                 ; pug templates
     prisma                              ; prisma orm
     javascript                          ; javascript
-    git-gutter
+    git-gutter                          ; git-gutter
+    whitespace                          ; remove whitespaces
     )
   "List of enabled modules.")
 
