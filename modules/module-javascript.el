@@ -10,9 +10,11 @@
 ;; Use js2-mode for enhanced JavaScript editing
 (use-package js2-mode
   :ensure t
+  :defer t
   :mode ("\\.js\\'" . js2-mode)
   :hook
   (js2-mode . tree-sitter-hl-mode)
+  (js2-mode . lsp)
   :interpreter ("node" . js2-mode)
   :config
   ;; Use js2-mode as the default JS mode
@@ -23,9 +25,11 @@
 ;; Use rjsx-mode for React JSX files
 (use-package rjsx-mode
   :ensure t
+  :defer t
   :mode ("\\.jsx\\'" . rjsx-mode)
   :hook
   (rjsx-mode . tree-sitter-hl-mode)
+  (rjsx-mode . lsp)
   :config
   ;; Indentation settings
   (setq js-indent-level 2)
@@ -35,20 +39,14 @@
 
 (use-package typescript-mode
   :ensure t
+  :defer t
   :mode ("\\.ts\\'" . typescript-mode)
   :hook
   (typescript-mode . tree-sitter-hl-mode)
+  (typescript-mode . lsp)
   :config
   (setq typescript-indent-level 2))
 
-;; Configure lsp-mode for JavaScript and TypeScript
-(with-eval-after-load 'lsp-mode
-  (add-to-list 'lsp-language-id-configuration '(js2-mode . "javascript"))
-  (add-to-list 'lsp-language-id-configuration '(rjsx-mode . "javascriptreact"))
-  (add-to-list 'lsp-language-id-configuration '(typescript-mode . "typescript"))
-  ;; Enable lsp-mode in js2-mode and rjsx-mode
-  (add-hook 'js2-mode-hook #'lsp-deferred)
-  (add-hook 'rjsx-mode-hook #'lsp-deferred))
 
 
 (with-eval-after-load 'apheleia
