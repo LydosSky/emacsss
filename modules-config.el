@@ -19,6 +19,7 @@
     flycheck                            ; check this out
     formatter                           ; better format it bro!!!
     emmet                               ; tags everywhere
+    pug                                 ; pug templates
     prisma                              ; prisma orm
     git-gutter
   "List of enabled modules.")
