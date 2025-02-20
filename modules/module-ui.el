@@ -13,7 +13,7 @@
   ;; Load the theme at startup
   (load-theme 'doom-one-light t)
   ;; Enable flashing mode-line on errors
-  (doom-themes-visual-bell-config)
+  ;;(doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
   (doom-themes-org-config)
   ;; Optional: Enable custom neotree theme (requires all-the-icons)
@@ -34,7 +34,7 @@
   ;; Set the height of the modeline
   (setq doom-modeline-height 15)
   ;; Display buffer encoding
-  (setq doom-modeline-buffer-encoding t)
+  (setq doom-modeline-buffer-encoding nil)
   ;; Show time in modeline (optional)
   ;; (setq display-time-default-load-average nil)
   ;; (display-time-mode 1)
@@ -45,7 +45,6 @@
   ;; Whether display the colorful icon for major mode.
   (setq doom-modeline-major-mode-color-icon t)
   )
-
 
 (provide 'module-ui)
 ;;; module-ui.el ends here
