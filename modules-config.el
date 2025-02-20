@@ -17,6 +17,7 @@
     env                                 ; env for getting PATH
     tree-sitter                         ; tree-sitter better syntax
     flycheck                            ; check this out
+    formatter                           ; better format it bro!!!
     emmet                               ; tags everywhere
     prisma                              ; prisma orm
     git-gutter
