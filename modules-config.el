@@ -17,6 +17,7 @@
     env                                 ; env for getting PATH
     tree-sitter                         ; tree-sitter better syntax
     flycheck                            ; check this out
+    emmet                               ; tags everywhere
     git-gutter
   "List of enabled modules.")
 
