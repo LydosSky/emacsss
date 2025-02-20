@@ -14,6 +14,11 @@
     ui
     completion
    )
+    magit                               ; magit 
+    company                             ; company mode 
+    ui                                  ; doom-themes modeline
+    completion                          ; completion vertico and all crew 
+    lsp                                 ; lsp mode and ui 
     env                                 ; env for getting PATH
     tree-sitter                         ; tree-sitter better syntax
     flycheck                            ; check this out
