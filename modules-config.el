@@ -15,6 +15,7 @@
     completion
     diff-hl
    )
+    env                                 ; env for getting PATH
   "List of enabled modules.")
 
 (provide 'modules-config)
