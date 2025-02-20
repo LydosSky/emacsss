@@ -13,11 +13,11 @@
     company
     ui
     completion
-    diff-hl
    )
     env                                 ; env for getting PATH
     tree-sitter                         ; tree-sitter better syntax
     flycheck                            ; check this out
+    git-gutter
   "List of enabled modules.")
 
 (provide 'modules-config)
