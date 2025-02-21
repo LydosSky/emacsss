@@ -14,10 +14,13 @@
   :straight (:files (:defaults "extensions/*")) ; Include extensions
   :defer t
   :init
+  (setq vertico-cycle t)
+  (setq resize-mini-windows t)
   ;; Enable vertico
-  (vertico-mode)
-  ;; Enable cycling through candidates
-  (setq vertico-cycle t))
+  (vertico-mode))
+
+
+
 
 (use-package vertico-directory
   :after vertico
@@ -54,7 +57,7 @@
          ("C-x b" . consult-buffer)        ;; Enhanced buffer switching
          ("C-x 4 b" . consult-buffer-other-window)
          ("C-x 5 b" . consult-buffer-other-frame)
-         ("C-c f r" . consult-recent-file)
+         ("C-x r" . consult-recent-file)
          ("M-g M-g" . consult-goto-line))  ;; Go to line with preview
   :init
   ;; Replace `completing-read-multiple' with enhanced version
@@ -84,7 +87,7 @@
 
 ;;; Which-Key: Display Available Keybindings in Popup
 (use-package which-key
-  :defer 1
+  :defer t
   :config
   (which-key-mode)
   (setq which-key-idle-delay 0.5))
