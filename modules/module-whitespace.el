@@ -34,8 +34,7 @@
   ;; Set the limit for long lines
   (setq whitespace-line-column 80)
   ;; Enable whitespace mode globally or in specific modes
-  ;; (global-whitespace-mode t)
-  ;; Uncomment the above line to enable globally
+  (global-whitespace-mode t)
   )
 
 (provide 'module-whitespace)
