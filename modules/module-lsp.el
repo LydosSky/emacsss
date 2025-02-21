@@ -20,7 +20,7 @@
    ;; Add other modes you want to enable lsp-mode for
    )
   :init
-  (setq lsp-keymap-prefix "C-c c")  ;; Or any other preferred prefix
+  (setq lsp-keymap-prefix "C-x c")  ;; Or any other preferred prefix
   :config
   ;; General LSP settings
   (setq lsp-enable-snippet t
@@ -46,6 +46,8 @@
         lsp-ui-sideline-show-hover nil
         lsp-ui-sideline-show-diagnostics nil
         lsp-ui-sideline-show-code-actions nil
+        lsp-modeline-diagnostics-enable nil
+        lsp-modeline-code-actions-enable nil
         lsp-headerline-breadcrumb-enable nil)
   :config
   ;; Additional configurations if needed
