@@ -11,16 +11,18 @@
 (use-package js2-mode
   :ensure t
   :defer t
-  :mode ("\\.js\\'" . js2-mode)
+  :mode ("\\.js\\'" . js-mode)
   :hook
-  (js2-mode . tree-sitter-hl-mode)
-  (js2-mode . lsp)
-  :interpreter ("node" . js2-mode)
+  ;;(js-mode . js2-minor-mode)
+  (js-mode . tree-sitter-hl-mode)
+  (js-mode . lsp)
+  :interpreter ("node" . js-mode)
   :config
   ;; Use js2-mode as the default JS mode
-  (setq js-indent-level 2)
   (setq js2-basic-offset 2)
-  (setq js2-highlight-level 0))
+  (setq js2-highlight-level 0)
+  )
+
 
 ;; Use rjsx-mode for React JSX files
 (use-package rjsx-mode
@@ -54,6 +56,13 @@
   (add-to-list 'apheleia-mode-alist '(rjsx-mode . prettier))
   (add-to-list 'apheleia-mode-alist '(typescript-mode . prettier)))
 
+(defun my/enable-js2-minor-mode ()
+  "Enable `js2-minor-mode` only if `prisma-mode` is not active."
+  (unless (derived-mode-p 'prisma-mode)
+    (js2-minor-mode 1)))
 
+;;(add-hook 'js-mode-hook 'my/enable-js2-minor-mode)
+
+(setq js-indent-level 2)
 (provide 'module-javascript)
 ;;; module-javascript.el ends here

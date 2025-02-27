@@ -13,6 +13,9 @@
   :hook
   ((prog-mode . git-gutter-mode)
    (text-mode . git-gutter-mode))
+  :init
+  (setq-default left-fringe-width 4)
+  (setq-default right-fringe-width 4)
   :config
   ;; Adjust update interval (in seconds)
   (setq git-gutter:update-interval 0.2)
@@ -20,7 +23,7 @@
     (setq git-gutter:modified-sign"▎")
     (setq git-gutter:added-sign   "▎")
     (setq git-gutter:deleted-sign "▎")
-    
+
     ;; Let git-gutter display in the margin
     (setq git-gutter:visibility-indicator nil)
     (setq git-gutter:window-width 1)
@@ -32,10 +35,11 @@
     :ensure t
     :demand t
     :after git-gutter
+    :init
     :config
     ;; Use slim vertical bars for indicators
     (setq-default fringes-outside-margins t)
-    
+
     (when (display-graphic-p)
       ;; Adjust fringe width if necessary
       ;; Define custom fringe bitmaps

@@ -23,7 +23,8 @@
     (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0] nil nil 'center))
 
   ;; Optionally disable underlining of errors
-  (setq flycheck-highlighting-mode 'symbols) ;; Options: 'symbols, 'lines, 'columns, or nil
+  (setq flycheck-highlighting-mode 'nil) ;; Options: 'symbols, 'lines, 'columns, or nil
+  (setq flycheck-highlighting-style 'level-face)
 
   ;; Disable tooltip pop-ups
   (setq flycheck-pos-tip-mode nil)

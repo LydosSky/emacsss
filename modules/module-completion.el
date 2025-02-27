@@ -15,7 +15,7 @@
   :defer t
   :init
   (setq vertico-cycle t)
-  (setq resize-mini-windows t)
+  ;; (setq resize-mini-windows t)
   ;; Enable vertico
   (vertico-mode))
 
@@ -63,6 +63,7 @@
   ;; Replace `completing-read-multiple' with enhanced version
   (advice-add #'completing-read-multiple :override #'consult-completing-read-multiple)
   :config
+
   ;; Optionally configure narrowing key
   (setq consult-narrow-key "<")
   ;; Configure preview settings
@@ -88,9 +89,13 @@
 ;;; Which-Key: Display Available Keybindings in Popup
 (use-package which-key
   :defer t
-  :config
-  (which-key-mode)
-  (setq which-key-idle-delay 0.5))
+  :commands which-key-mode
+  :hook (after-init . which-key-mode)
+  :custom
+  (which-key-idle-delay 1.5)
+  (which-key-idle-secondary-delay 0.25)
+  (which-key-add-column-padding 1)
+  (which-key-max-description-length 40))
 
 ;;; Helpful: Enhanced Help Pages
 (use-package helpful

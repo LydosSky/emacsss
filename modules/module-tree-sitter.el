@@ -10,7 +10,9 @@
 (use-package tree-sitter
   :ensure t
   :defer t
-  :config)
+  :config
+
+  )
 
 ;; ;; Tree-sitter language bundles
 (use-package tree-sitter-langs
@@ -18,7 +20,20 @@
   :defer t
   :after tree-sitter)
 
-
+;; (with-eval-after-load 'tree-sitter
+;;   (custom-set-faces
+;;    `(tree-sitter-hl-face:number ((t (:foreground  ,(doom-color 'orange) :weight bold))))
+;;    `(tree-sitter-hl-face:operator ((t (:foreground ,(doom-color 'fg)))))
+;;    `(tree-sitter-hl-face:method ((t (:foreground  ,(doom-color 'blue)))))
+;;    `(tree-sitter-hl-face:function ((t (:foreground ,(doom-color 'blue)))))
+;;    `(tree-sitter-hl-face:constant ((t (:foreground ,(doom-color 'red)))))
+;;    `(tree-sitter-hl-face:keyword ((t (:foreground ,(doom-color 'magenta)))))
+;;    `(tree-sitter-hl-face:string.special ((t (:foreground ,(doom-color 'blue)))))
+;;    `(tree-sitter-hl-face:variable.parameter ((t (:foreground ,(doom-color 'red))))))
+;;   )
+(with-eval-after-load 'tree-sitter
+  (custom-set-faces
+   '(tree-sitter-hl-face:function.call ((t (:inherit tree-sitter-hl-face:function :weight bold))))))
 
 (provide 'module-tree-sitter)
 ;;; module-tree-sitter.el ends here

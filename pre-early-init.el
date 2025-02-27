@@ -11,5 +11,8 @@
 (setq user-emacs-directory minimal-emacs-var-dir)
 (setq custom-file null-device)
 (setq-default cursor-type '(bar . 3))
+(delete-selection-mode)
+(global-set-key (kbd "C-x C-b") (interactive))
+(add-hook 'prog-mode-hook 'display-fill-column-indicator-mode)
 (provide 'pre-ealy-init)
 ;;; pre-ealy-init.el ends here

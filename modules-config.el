@@ -25,7 +25,7 @@
     javascript                          ; javascript
     git-gutter                          ; git-gutter
     whitespace                          ; remove whitespaces
-    ;;performance
+    performance
     vterm                               ; terminal
     )
   "List of enabled modules.")
