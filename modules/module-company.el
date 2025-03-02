@@ -12,7 +12,7 @@
   :hook (after-init . global-company-mode)
   :init
   (setq company-idle-delay 0.1)  ;; Delay before suggestions pop up
-  (setq company-minimum-prefix-length 2)  ;; Minimum number of characters before suggestions
+  (setq company-minimum-prefix-length 1)  ;; Minimum number of characters before suggestions
   (setq company-show-numbers nil)  ;; Show numbers for suggestions
   (setq company-tooltip-align-annotations t)  ;; Align annotations to the right tooltip border
   (setq company-selection-wrap-around t)  ;; Wrap around suggestions
@@ -21,14 +21,23 @@
   (setq company-dabbrev-other-buffers nil)
   (setq company-dabbrev-ignore-case nil)
   (setq company-dabbrev-downcase nil)
-  (setq company-tooltip-align-annotations t)
   (setq company-tooltip-offset-display 'scroll)  ;; Can be 'lines', 'scrollbar', or nil
   (global-set-key (kbd "M-/") 'company-complete)  ;; Keybinding for manual completion
   :bind (:map company-active-map
               ("<tab>" . company-complete-common-or-cycle)  ;; Use tab for cycling completions
               ("<backtab>" . company-select-previous)
               ("C-n" . company-select-next)
-              ("C-p" . company-select-previous)))
+              ("C-p" . company-select-previous))
+  :config
+  (setq company-backends
+        '(company-capf
+          company-dabbrev
+          company-dabbrev-code
+          company-keywords
+          company-files
+          company-yasnippet))
+  )
+
 
 
 (use-package company-statistics
@@ -37,9 +46,6 @@
   :config
   (company-statistics-mode))  ;; Enable company-statistics mode
 
-(setq-local completion-at-point-functions
-            (mapcar #'cape-company-to-capf
-                    (list #'company-files #'company-keywords #'company-dabbrev)))
 
 (use-package company-box
   :defer t
@@ -50,7 +56,6 @@
   :init
   ;; Define a list of letter icons
   (setq company-box-icons-alist 'company-box-icons-letters)
-
   (setq company-box-icons-letters
         `((Unknown       . ,(propertize "U" 'face 'font-lock-comment-face))
           (Text          . ,(propertize "T" 'face 'font-lock-string-face))
@@ -79,6 +84,10 @@
           (Operator      . ,(propertize "O" 'face 'font-lock-comment-delimiter-face))
           (TypeParameter . ,(propertize "T" 'face 'font-lock-type-face)))))
 
+
+;; (setq-local completion-at-point-functions
+;;             (mapcar #'cape-company-to-capf
+;;                     (list #'company-files #'company-keywords #'company-dabbrev #'company-yasnippet)))
 
 
 (provide 'module-company)
