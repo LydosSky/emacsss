@@ -23,7 +23,7 @@
   (setq lsp-keymap-prefix "C-x c")  ;; Or any other preferred prefix
   :config
   ;; General LSP settings
-  (setq lsp-enable-snippet t
+  (setq lsp-enable-snippet nil
         lsp-prefer-flymake nil)  ;; Use flycheck instead of flymake
   ;; Performance optimizations
   (setq gc-cons-threshold 100000000)   ;; Increase garbage collection threshold

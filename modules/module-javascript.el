@@ -11,12 +11,12 @@
 (use-package js2-mode
   :ensure t
   :defer t
-  :mode ("\\.js\\'" . js-mode)
+  :mode ("\\.js\\'" . js-ts-mode)
   :hook
   ;;(js-mode . js2-minor-mode)
   (js-mode . tree-sitter-hl-mode)
   (js-mode . lsp)
-  :interpreter ("node" . js-mode)
+  :interpreter ("node" . js-ts-mode)
   :config
   ;; Use js2-mode as the default JS mode
   (setq js2-basic-offset 2)
@@ -65,4 +65,5 @@
 
 (setq js-indent-level 2)
 (provide 'module-javascript)
+
 ;;; module-javascript.el ends here

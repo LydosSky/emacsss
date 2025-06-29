@@ -12,7 +12,7 @@
   :hook (after-init . global-company-mode)
   :init
   (setq company-idle-delay 0.1)  ;; Delay before suggestions pop up
-  (setq company-minimum-prefix-length 1)  ;; Minimum number of characters before suggestions
+  (setq company-minimum-prefix-length 2)  ;; Minimum number of characters before suggestions
   (setq company-show-numbers nil)  ;; Show numbers for suggestions
   (setq company-tooltip-align-annotations t)  ;; Align annotations to the right tooltip border
   (setq company-selection-wrap-around t)  ;; Wrap around suggestions
