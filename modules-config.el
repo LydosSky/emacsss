@@ -10,9 +10,10 @@
 ;; This is the list of modules that will be load
 (defvar list-modules
   '(
+    ui                                  ; doom-themes modeline
+    c                                   ;c/c++
     magit                               ; magit
     company                             ; company mode
-    ui                                  ; doom-themes modeline
     completion                          ; completion vertico and all crew
     lsp                                 ; lsp mode and ui
     env                                 ; env for getting PATH
@@ -25,7 +26,7 @@
     javascript                          ; javascript
     git-gutter                          ; git-gutter
     whitespace                          ; remove whitespaces
-    performance
+    ;; performance
     vterm                               ; terminal
     )
   "List of enabled modules.")
