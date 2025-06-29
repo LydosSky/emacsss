@@ -7,12 +7,11 @@
 ;;; Code:
 
 ;; Tree-sitter core
-(use-package tree-sitter
-  :ensure t
-  :defer t
-  :config
-
-  )
+;; (use-package tree-sitter
+;;   :ensure t
+;;   :defer t
+;;   :config
+;;   )
 
 ;; ;; Tree-sitter language bundles
 (use-package tree-sitter-langs
@@ -31,9 +30,20 @@
 ;;    `(tree-sitter-hl-face:string.special ((t (:foreground ,(doom-color 'blue)))))
 ;;    `(tree-sitter-hl-face:variable.parameter ((t (:foreground ,(doom-color 'red))))))
 ;;   )
-(with-eval-after-load 'tree-sitter
-  (custom-set-faces
-   '(tree-sitter-hl-face:function.call ((t (:inherit tree-sitter-hl-face:function :weight bold))))))
+
+;; (with-eval-after-load 'tree-sitter
+;;   (custom-set-faces
+;;    '(tree-sitter-hl-face:function.call ((t (:inherit tree-sitter-hl-face:function :weight bold))))))
+
+
+
+
+
+(custom-set-faces
+ '(font-lock-escape-face ((t :inherit font-lock-warning-face)))
+ '(font-lock-function-call-face ((t (:inherit font-lock-preprocessor-face)))))
+
+(setq treesit-font-lock-level 6)
 
 (provide 'module-tree-sitter)
 ;;; module-tree-sitter.el ends here
